@@ -1,5 +1,6 @@
 {
   "name": "redwood-app",
-  "main": "dist/worker/worker.js",
-  "compatibility_date": "2025-04-02"
+  "main": "src/worker.tsx",
+  "compatibility_date": "2025-04-02",
+  "compatibility_flags": ["nodejs_compat"]
 }

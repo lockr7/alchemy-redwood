@@ -97,6 +97,13 @@ async fetch(request, env) {
         ...props.bindings,
         ASSETS: staticAssets,
       },
+      bundle: {
+        options: {
+          external: ["node:events", "node:stream"],
+        },
+      },
+      compatibilityDate: "2025-04-02",
+      compatibilityFlags: ["nodejs_compat"],
     });
 
     await WranglerJson("wrangler.json", {

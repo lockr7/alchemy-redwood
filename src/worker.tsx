@@ -4,6 +4,7 @@ import { Document } from "src/Document";
 import { Home } from "src/pages/Home";
 import { setCommonHeaders } from "src/headers";
 import { drizzle } from "drizzle-orm/d1";
+import { env } from "cloudflare:workers";
 
 export interface Env {
   DB: D1Database;
@@ -13,11 +14,11 @@ export type AppContext = {
   db: ReturnType<typeof drizzle>;
 };
 
-export default defineApp<AppContext>([
+export default defineApp([
   setCommonHeaders(),
-  ({ appContext, env }) => {
+  ({ ctx }) => {
     // setup db in appContext
-    appContext.db = drizzle(env.DB);
+    ctx.db = drizzle(env.DB);
   },
   render(Document, [index([Home])]),
 ]);

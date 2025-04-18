@@ -1,9 +1,8 @@
 import { users } from "../../db/schema";
-import { RouteOptions } from "@redwoodjs/sdk/router";
-import { AppContext } from "@/worker";
+import { RequestInfo } from "@redwoodjs/sdk/worker";
 
-export async function Home({ appContext }: RouteOptions<AppContext>) {
-  const allUsers = await appContext.db.select().from(users).all();
+export async function Home({ ctx }: RequestInfo) {
+  const allUsers = await ctx.db.select().from(users).all();
   return (
     <div>
       <h1>Hello World</h1>

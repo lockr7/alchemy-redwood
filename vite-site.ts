@@ -98,6 +98,11 @@ async fetch(request, env) {
         ASSETS: staticAssets,
       },
       compatibilityFlags: ["nodejs_compat"],
+      bundle: {
+        options: {
+          external: ["async_hooks", "node:events", "node:stream"],
+        },
+      },
     });
 
     await WranglerJson("wrangler.json", {

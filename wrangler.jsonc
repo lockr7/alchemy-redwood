@@ -1,0 +1,5 @@
+{
+  "name": "redwood-app",
+  "main": "dist/worker/worker.js",
+  "compatibility_date": "2025-04-02"
+}

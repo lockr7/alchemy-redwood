@@ -82,7 +82,7 @@ export async function ViteSite<B extends Bindings>(
 
     const worker = await Worker("worker", {
       name: props.name ?? id,
-      entrypoint: "./dist/worker/worker.js",
+      entrypoint: props.main,
       script: props.main
         ? undefined
         : `
@@ -96,12 +96,6 @@ async fetch(request, env) {
       bindings: {
         ...props.bindings,
         ASSETS: staticAssets,
-      },
-      compatibilityFlags: ["nodejs_compat"],
-      bundle: {
-        options: {
-          external: ["async_hooks", "node:events", "node:stream"],
-        },
       },
     });
 

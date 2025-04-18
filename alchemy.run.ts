@@ -9,7 +9,7 @@ const app = await alchemy("redwood-app", {
 
 export const website = await ViteSite("redwood-app", {
   command: "bun run build",
-  main: "dist/worker/worker.js",
+  main: "src/worker.tsx",
   assets: "dist/client",
 });
 

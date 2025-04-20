@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `nickname` text DEFAULT 'No Nickname' NOT NULL;

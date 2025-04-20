@@ -1,0 +1,6 @@
+{
+  "name": "redwood-app",
+  "main": "dist/worker/worker.js",
+  "compatibility_date": "2022-04-05",
+  "assets": { "directory": "./dist/client", "binding": "ASSETS" }
+}

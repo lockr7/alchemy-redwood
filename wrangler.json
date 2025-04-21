@@ -2,5 +2,12 @@
   "name": "redwood-app",
   "main": "dist/worker/worker.js",
   "compatibility_date": "2022-04-05",
-  "assets": { "directory": "./dist/client", "binding": "ASSETS" }
+  "assets": { "directory": "./dist/client", "binding": "ASSETS" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "5ff26447-8520-4d4c-bfa9-8b049ffe3c89",
+      "database_name": "alchemy-redwood-db"
+    }
+  ]
 }

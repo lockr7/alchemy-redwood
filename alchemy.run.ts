@@ -2,8 +2,8 @@ import "alchemy/cloudflare";
 
 import alchemy from "alchemy";
 import { ViteSite } from "./vite-site";
-import { D1Database } from "./d1-database";
 import { Exec } from "alchemy/os";
+import { D1Database } from "alchemy/cloudflare";
 
 const app = await alchemy("redwood-app", {
   phase: process.argv.includes("--destroy") ? "destroy" : "up",
